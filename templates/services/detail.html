@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<main>
+    <div class="accueil-detail">
+        <div class="accueil-detail-content" 
+         style="border-radius: 10px;
+                    height: 400px;
+                    background: url('{{ traiteur.image.url }}') center / cover;
+                    object-fit: cover;
+                    position: relative;">
+            <a href="#" class="verifiee">
+                <i class="fa-solid fa-circle-check"></i>
+                Vérifié
+            </a>
+            <a href="" class="stars">
+                <i class="fa-solid fa-star"></i>
+                0.0/5
+            </a>
+            <div class="sombre"></div>
+        </div>
+    </div>
+    <section class="detail-contact">
+        <div class="apropros">
+            <h3>À propos</h3>
+            <p>{{traiteur.nom_complet}}</p>
+        </div>
+        <div class="speciality">
+            <h3>Spécialités</h3>
+            <div class="langue">
+                <a href="#" class="french">{{traiteur.specialites}}</a>
+                <a href="#" class="indienne">Indienne</a>
+            </div>
+        </div>
+        <div class="servicepropose">
+            <h3>Services proposés</h3>
+            <div class="checkservice">
+                <div class="checkLeft">
+                    <p><i class="fa-solid fa-check"></i> Mariage</p>
+                    <p><i class="fa-solid fa-check"></i> Cooktails</p>
+                </div>
+                <div class="checkRight">
+                    <p><i class="fa-solid fa-check"></i> Anniversaire</p>
+                    <p><i class="fa-solid fa-check"></i> Cuisine sur mesure</p>
+                </div>
+            </div>
+        </div>
+        <div class="contactExperience">
+        <div class="mapsLocal">
+                <h3>Contact</h3>
+                <div class="localisation">
+                    <p><i class="fa-solid fa-location-dot"></i> {{traiteur.telephone}} </p>
+                    <p><i class="fa-solid fa-phone"></i> {{traiteur.adresse}} </p>
+                    <p><i class="fa-solid fa-envelope"></i> {{traiteur.email}} </p>
+                </div>
+        </div>
+        <div class="experiences">
+                <h3>Description</h3>
+                <p>{{traiteur.description}}</p>
+        </div>
+        <div class="lanGue">
+                <h3>Langues parlées</h3>
+                <div class="langueChild">
+                    <a href="#" class="frenche">Française</a>
+                    <a href="#" class="arabe">Arabe</a>
+                    <a href="#" class="italien">Italien</a>
+                </div>
+        </div>
+            <div class="butonCall">
+                <a href="#"><i class="fa-solid fa-phone"></i> Contacter</a>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

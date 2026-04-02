@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title> {% block title %} {% endblock %} </title>
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <a id="logo" href="{% static 'images/logo.png' %}"><img src="{% static 'images/logo.png' %}" alt="logo du site"></a>
+            <ul>
+                <li><a class="active" href="{% url 'accueil' %}">Accueil</a></li>
+                <li><a href="#restaurant">Restaurants</a></li>
+                <li><a href="#cours">Cours de Cuisine</a></li>
+                <li><a href="{% url 'liste_traiteur' %}">Traiteurs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="login">
+                {% if user.is_authenticated %}
+                <form method="post" action="{% url "logout" %}">
+                    {% csrf_token %}
+                    <div class="but">
+                        <button id="lien2" type="submit">Déconnexion</button>
+                    </div>
+                </form>
+                <a href="#"></a>
+                {% else %}
+                <a href="{% url "login" %}">Connexion</a>
+                <a id="lien2" href="{% url "signup" %}">S'inscrire</a>
+                {% endif %}
+            </div>
+            <i class="fa-solid fa-bars"></i>
+        </nav>
+    </header>
+    {% block content %} {% endblock %}
+     <footer>
+        <div class="footer-content">
+            <div class="footer-box">
+                <h5>A propos</h5>
+                <ul>
+                    <li><a href="#">Qui sommes-nous</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h5>Services </h5>
+                <ul>
+                    <li><a href="#">Traiteurs</a></li>
+                    <li><a href="#">Restaurants</a></li>
+                    <li><a href="#">Cours de cuisine</a></li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h5>Espace Pro</h5>
+                <ul>
+                    <li><a href="#">Devenir partenaire</a></li>
+                    <li><a href="#">Connexion</a></li>
+                    <li><a href="#">FAQ Professionnels</a></li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h5>Contact</h5>
+                <ul>
+                    <li><a href="#">Star Buffet</a></li>
+                    <li><a href="#">Dakar, Sénégal</a></li>
+                    <li><a href="#">Tel :+221 77 000 00 0O</a></li>
+                    <li><a href="#">Email : contact@starbuff.com</a></li>
+                    <li>
+                        <a id="icons" href="#">
+                            <i class="fa-brands fa-facebook"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="trait"></div>
+        <p class="last-text">&copy;Star Buffet. Tous drois réservés</p>
+    </footer>
+</body>
+</html>

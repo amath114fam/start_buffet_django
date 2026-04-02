@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+ <main>
+        <section class="accueil" id="accueil">
+            <div class="flutter"></div>
+            <a class="search" href="#">
+                <i class="fa-solid fa-magnifying-glass-dollar"></i>
+                Cours disponibles
+            </a>
+            <div class="text-description">
+                <h2>Décrouver la <span>Cuisine  Sénégalaise</span></h2>
+                <p>Explorez les saveurs authentiques du Sénégal. Du Thiéboudienne aux Alloco, apprenez les secrets de la cuisine sénégalaise avec nos chefs experts. </p>
+            </div>
+            <img src="{% static 'images/thieboudieunerouge.webp' %}" alt="image du plat Thiéboudienne" class="thieb">
+        </section>
+        <div class="resultats">
+            <div class="box">
+                <p>100+</p>
+                <span>Restaurants Partenaires</span>
+            </div>
+             <div class="box">
+                <p>30min</p>
+                <span>Livraison Moyenne</span>
+            </div>
+             <div class="box">
+                <p>50+</p>
+                <span>Cours de Cuisine</span>
+            </div>
+             <div class="box">
+                <p>4.8/5</p>
+                <span>Note Moyenne</span>
+            </div>
+        </div>
+        <div class="service" id="traiteur">
+            <div class="titre-service">
+                <p>Nos Services</p>
+                <span>Découvrez nos services de qualité pour tous vos besoins culinaires </span>
+            </div>
+            <div class="cart-content">
+                <div class="cart-content-box">
+                    <p class="titre-content">Trouver un restaurant</p>
+                    <span>Commandez vos plats préférés et faites-vous livrer rapidement à domicile. </span>
+                    <a href="#">Trouver maintenant → </a>
+                </div>
+                 <div class="cart-content-box middle">
+                    <p class="titre-content">Cours de cuisine </p>
+                    <span>Apprenez à cuisiner avec nos chefs professionnels en direct ou en replay. </span>
+                    <a href="#">Découvrir les cours →  </a>
+                </div>
+                 <div class="cart-content-box">
+                    <p class="titre-content">Serveurs de Traiteur</p>
+                    <span>Organisez vos événements avec nos services de traiteur professionnels. </span>
+                    <a href="{% url 'liste_traiteur' %}">Voir les traiteurs → </a>
+                </div>
+            </div>
+        </div>
+        <section class="maps" id="cours">
+            <h2>Trouver les restaurants les plus proches de vous? </h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123488.80138619208!2d-17.54839942745536!3d14.711175879552592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec172f5b3c5bb71%3A0xb17c17d92d5db21f!2sDakar!5e0!3m2!1sfr!2ssn!4v1766228119414!5m2!1sfr!2ssn" width="700" height="250" style="border:0; border-radius: 20px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+        <section class="client">
+            <h2>Ce que disent nos clients à propos des restaurants </h2>
+            <div class="content">
+                <div class="client-content">
+                    <div class="client-child">
+                        <h6 class="fd">FD</h6>
+                        <div class="client-name">
+                            <p>Fatou Diop</p>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <span class="avis">"Excellent service ! Les plats sont délicieux et la livraison est rapide."</span>
+                </div>
+                <div class="client-content">
+                    <div class="client-child">
+                        <h6 class="md">MD</h6>
+                        <div class="client-name">
+                            <p>Mamadou Diallo</p>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <span class="avis">"J'ai adoré les cours de cuisine. Les chefs sont très professionnels." </span>
+                </div>
+                <div class="client-content">
+                    <div class="client-child">
+                        <h6 class="ab">AB</h6>
+                        <div class="client-name">
+                            <p>Assaitou Ba</p>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star neutre"></i>
+                        </div>
+                    </div>
+                    <span class="avis">"Service de traiteur impeccable pour mon mariage. Tout était parfait !" </span>
+                </div>
+                <div class="client-content">
+                    <div class="client-child">
+                        <h6 class="os">OS</h6>
+                        <div class="client-name">
+                            <p>Ousmane Sall</p>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <span class="avis">"La meilleure plateforme pour découvrir la cuisine sénégalaise." </span>
+                </div>
+            </div>
+        </section>
+        <!-- <section class="contact" id="contact">
+            <h2>Contactez-nous</h2>
+            <p class="contact-desc">
+                Une question, une suggestion ou un partenariat ?
+                N’hésitez pas à nous contacter, notre équipe vous répondra rapidement.
+            </p>
+            <div class="contact-form-image">
+                <img src="images/logo.png" alt="">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="nom">Nom complet</label>
+                        <input type="text" id="nom" placeholder="Votre nom">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Adresse email</label>
+                        <input type="email" id="email" placeholder="exemple@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adresse">Adresse</label>
+                        <input type="text" id="adresse" placeholder="Dakar, Sénégal">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="4" placeholder="Écrivez votre message ici..."></textarea>
+                    </div>
+
+                    <button type="submit">Envoyer le message</button>
+                </form>
+            </div>
+        </section> -->
+        <div class="recherche" id="restaurant">
+            <div class="flutter2"></div>
+            <div class="recherche-content">
+                <p class="first-p">Prêt à commencer ?</p>
+                <p class="second-p">Commandez dès maintenant</p>
+                <span class="decouverte">Commandez nos restaurants partenaires et faites-vous livres vos plats préférés</span>
+                <a id="find-restaurant" href="#">Trouver un restaurant !</a>
+            </div>
+        </div>
+    </main>
+{% endblock %}

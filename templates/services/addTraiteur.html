@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section class="login-auth">
+    <div class="auth">
+        <h2>Ajouter Traiteur</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% if form.errors %}
+                <p style="color:red;">Veuillez corriger les erreurs.</p>
+            {% endif %}
+
+            <div class="mail">
+                <label for="mail">Nom Complet</label>
+                <input type="text" id="mail" name="nom_complet">
+            </div>
+            <div class="pass">
+                <label for="passe">Spécialités</label>
+                <input type="text" id="passe" name="specialites">
+            </div>
+            <div class="pass">
+                <label for="passe">Description</label>
+                <textarea name="description"></textarea>
+            </div>
+            <div class="pass">
+                <label for="passe">Adresse</label>
+                <input type="text" id="passe" name="adresse">
+            </div>
+            <div class="pass">
+                <label for="passe">Email</label>
+                <input type="email" id="passe" name="email">
+            </div>
+            <div class="pass">
+                <label for="passe">Téléphone</label>
+                <input type="text" id="passe" name="telephone">
+            </div>
+            <div class="pass">
+                <label for="passe">Image</label>
+                <input type="file" id="passe" name="image">
+            </div>
+            <div class="but">
+                <button type="submit">Enregistrer</button>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

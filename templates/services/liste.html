@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<main>
+    <section class="accueil-traiteurs">
+        <div class="blur"></div>
+        <div class="text-trait-accuel">
+            <h2>Nos traiteurs</h2>
+            <p>Découvrez nos traiteurs professionnels pour vos événements, mariages, baptêmes et <br> réceptions. </p>
+        </div>
+    </section>
+    <section class="filter">
+        <div class="filter-content">
+            <h2 class="filter-titre">Filtres</h2>
+            <div class="top-filter">
+                    <div class="filter-option1">
+                        <p>Spécialité</p>
+                        <select name="select1" id="select1" class="option1">
+                            <option value="">Tous les spécialités</option>
+                        </select>
+                    </div>
+                    <div class="filter-option2">
+                        <p>Statut</p>
+                        <select name="select2" id="select2" class="option2">
+                            <option value="">Tous les traiteurs</option>
+                        </select>
+                    </div>
+                    <div class="filter-reload">
+                        <a href="#" class="lienRose">
+                            <i class='bx  bx-filter'></i> 
+                            filter
+                        </a>
+                        <a href="#" class="lienBlanche">
+                            <i class='bx  bx-refresh-cw'></i> 
+                            Réinitiliaser
+                        </a>
+                    </div>
+            </div>
+        </div>
+        <div class="filter-bottom">
+            {% for listes_traiteur in liste_traiteur %}
+            <div class="fisrt-box">
+                <a href="#" class="verifie">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Vérifié
+                </a>
+                <a href="{% url 'detail_traiteur' listes_traiteur.id %}" class="profil">Voir le profil</a>
+                <a href="#" class="star">
+                    <i class="fa-solid fa-star"></i>
+                    0.0
+                </a>
+                <div class="image-text">
+                    <img src="{{ listes_traiteur.image.url }}" alt="Baniere des traiteurs">
+                    <div class="desc">
+                        <p class="text-experience">
+                            <i class="fa-solid fa-circle"></i>
+                            {{ listes_traiteur.nom_complet }}
+                        </p>
+                        <span></span>
+                        <p class="specialite">Spécialité : {{ listes_traiteur.specialites }}</p>
+                        <a href="#" class="japonaise">Japonaise </a>
+                        <p class="tel">
+                            <i class="fa-solid fa-phone"></i>
+                            {{ listes_traiteur.telephone }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <div class="recherche" id="restaurant">
+        <div class="flutter2"></div>
+        <div class="recherche-content">
+            <p class="first-p">Vous êtes traiteurs ?</p>
+            <span class="decouverte">Rejoignez notre réseau et développez votre activité événementielle ! </span>
+            <a id="find-restaurant" href="#">Devenir traiteur</a>
+        </div>
+    </div>
+</main>
+{% endblock %}
