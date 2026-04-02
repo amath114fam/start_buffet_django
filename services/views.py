@@ -25,7 +25,6 @@ def detail_traiteur(request, id):
 def SignUp(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
-        print(form.errors)  
         if form.is_valid():
             form.save()
             return redirect('login')   

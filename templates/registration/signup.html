@@ -6,6 +6,9 @@
     <div class="auth">
         <h2>Inscription</h2>
         <form method="post">
+            {% if form.errors %}
+            <p style="color: red;">Format invalid</p>
+            {% endif %}
             {% csrf_token %}
             <div class="mail">
                 <label for="mail">Nom Utilisateur</label>

@@ -6,6 +6,9 @@
     <div class="auth">
         <h2>Connexion</h2>
         <form method="post" action="{% url "login" %}">
+            {% if form.errors %}
+            <p style="color: red;">Adresse Email ou mot de passe incorrect</p>
+            {% endif %}
             {% csrf_token %}
             <div class="mail">
                 <label for="mail">Nom Utilisateur</label>
@@ -15,6 +18,7 @@
                 <label for="passe">Mot de passe</label>
                 <input type="password" id="passe" name="password">
             </div>
+            <p>Pas de compte ?<a href="{% url "signup" %}" style="font-weight: bold;"> inscrivez-vous</a></p>
             <div class="but">
                 <button type="submit">Se connecter</button>
             </div>
